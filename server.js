@@ -18,3 +18,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //middleware to use routes
 app.use(routes);
+
+//starts the server once run (using node server.js)
+app.listen(PORT, () => {
+    console.log('server running at http://localhost:' + PORT)
+})
