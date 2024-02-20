@@ -8,7 +8,8 @@ router.get('/notes', (req, res) => {
     if (err) {
         console.error(err);
       } else {
-        res.json(JSON.parse(data))
+        const notes = JSON.parse(data)
+        res.json(notes)
       }
     })
 });
