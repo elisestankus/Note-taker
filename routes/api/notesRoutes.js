@@ -24,7 +24,8 @@ router.post('/', (req, res) => {
     // new object to be pushed to the db array
     const newNote = {
       title,
-      text
+      text,
+      id: uuid(),
     };
     // read existing notes
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
