@@ -1,6 +1,7 @@
 //dependencies
 const router = require('express').Router();
 const fs = require('fs');
+const uuid = require('../../helpers/uuid');
 
 // GET request for all notes
 router.get('/', (req, res) => {
@@ -23,7 +24,8 @@ router.post('/', (req, res) => {
     // new object to be pushed to the db array
     const newNote = {
       title,
-      text
+      text,
+      id: uuid(),
     };
     // read existing notes
     fs.readFile('./db/db.json', 'utf-8', (err, data) => {
